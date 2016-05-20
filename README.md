@@ -1,5 +1,5 @@
 # graylog-install
-How To Install Graylog And Centralize Logs On Ubuntu in under 15 minutes
+How To Install Graylog And Centralize Logs On Ubuntu in 15 minutes
 
 Graylog2 is a powerful log management and analysis tool that has many use cases, from monitoring SSH logins and unusual activity to debugging applications. It is based on Elasticsearch, Java, MongoDB, and Scala.
 
