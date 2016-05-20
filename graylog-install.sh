@@ -50,28 +50,28 @@ select opt in "${options[@]}"
 do
     case $opt in
         "MongoDB 10gen (2.x)")
-						### Download and install the Public Signing Key
-						sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+			### Download and install the Public Signing Key
+			sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
             sudo echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
-						sleep 1
-						break
+			sleep 1
+			break
             ;;
         "MongoDB 3.x")
-						sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+			sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
             if [ "$ver" = "12.04" ]
-						then
-						    echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-								sleep 1
-						elif [ "$ver" = "14.04" ]
-								    then
-								    sudo echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-									sleep 1
-								else
-								echo "This script only supports 12.04 (Precise) & 14.04 (Trusty) releases of Ubuntu"
-								return
-								break
-						fi
-						break
+				then
+				echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+				sleep 1
+			elif [ "$ver" = "14.04" ]
+			 	then
+				sudo echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+				sleep 1
+				else
+				echo "This script only supports 12.04 (Precise) & 14.04 (Trusty) releases of Ubuntu"
+				return
+				break
+				fi
+				break
             ;;
         *) echo invalid option;;
     esac
